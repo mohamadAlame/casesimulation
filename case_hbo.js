@@ -1,255 +1,260 @@
-// Narrative + decision data for the HBO case.
-// Scenes can be type "narrative" or "decision".
-// Decision options include scoring + elaborated feedback.
-
 const caseScenes = [
   {
     id: "intro-role",
     type: "narrative",
-    title: "Your Role at HBO",
+    title: "Your Role at TAQA Snacks",
     text:
-      "You are Leon DeNeve, a program manager at HBO. The streaming wars are intensifying and HBO must choose its strategic footing.",
+      "You are the strategic advisor to Soumaya Merhi, founder of TAQA Snacks. Lebanon is collapsing economically and socially, and TAQA’s survival now depends on a series of difficult choices. Your task is to help Soumaya protect TAQA’s mission, identity, and people while navigating extreme uncertainty.",
     image:
-      "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&w=900"
+      "https://www.taqasnacks.com/wp-content/uploads/2022/01/Website-top-02.png?auto=compress&w=900"
   },
+
   {
-    id: "vp-meeting",
+    id: "crisis-context",
     type: "narrative",
-    title: "Meeting with the VP of Programming",
+    title: "Lebanon Melts Down (2019–2022)",
     text:
-      "VP: “New entrants are crowding the market, content costs are rising, and churn is creeping up. We need a coherent plan for the next 12–24 months.”",
+      "TAQA grew rapidly across the region until Lebanon fell into one of the worst crises in its modern history. Half of TAQA’s cash became trapped in banks under informal capital controls. The Lebanese pound lost more than 95% of its value. Production costs exploded due to expensive imports, and demand plummeted as consumers emigrated. TAQA’s output fell by 75% and regional expansion stalled.",
     image:
-      "https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&w=900"
+      "https://c.files.bbci.co.uk/116E3/production/_113359317_062379460.jpg?auto=compress&w=900"
   },
+
   {
-    id: "dp-2019-orig-vs-license",
+    id: "dp-liquidity",
     type: "decision",
-    title: "Decision Point: Originals vs Licensing (2019)",
+    title: "Decision Point: Surviving the Liquidity Crisis",
     text:
-      "After reviewing internal analyses, you’ve narrowed options. Pick your recommendation. You can change your selection until you submit.",
+      "TAQA has cash stuck in the bank, production costs are skyrocketing, and expansion is impossible without liquidity. How do you secure cash without destroying TAQA’s identity?",
     image: null,
     options: [
       {
-        label: "Prioritize original content (build HBO-owned IP).",
+        label: "Seek a convertible loan from international partners.",
         tier: "best",
         score: 2,
-        headline: "Best choice — builds durable control of supply.",
+        headline: "Best — liquidity while preserving control.",
         why_this:
-          "Owning IP reduces supplier power in the long run, creates enduring differentiation, and compounds brand equity.",
-        why_not_best:
-          null
-      },
-      {
-        label: "License more from external studios for rapid catalog growth.",
-        tier: "poor",
-        score: 0,
-        headline: "Poor choice — reinforces supplier dependence.",
-        why_this:
-          "Faster short-term volume, but rental content keeps leverage with outside studios and raises renewal risk.",
-        why_not_best:
-          "Originals convert cost into assets; licensing turns budget into a metered expense with limited defensibility."
-      },
-      {
-        label: "Split resources evenly between licensing and originals.",
-        tier: "okay",
-        score: 1,
-        headline: "Okay — hedges bets but dilutes momentum.",
-        why_this:
-          "Balanced exposure can manage risk when uncertainty is high.",
-        why_not_best:
-          "Focus accelerates capability building; a split slows compounding IP advantages versus competitors."
-      }
-    ]
-  },
-  {
-    id: "narr-entrants",
-    type: "narrative",
-    title: "Competitive Pressure Increases (2020)",
-    text:
-      "Disney+, Apple TV+, and Peacock intensify rivalry. Price moves and exclusives dominate headlines.",
-    image:
-      "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&w=900"
-  },
-  {
-    id: "dp-2020-positioning",
-    type: "decision",
-    title: "Decision Point: Positioning vs Price (2020)",
-    text:
-      "Given new entrants, do you push price tactics or defend a premium position?",
-    image: null,
-    options: [
-      {
-        label: "Introduce ad-supported tier and cut price.",
-        tier: "okay",
-        score: 1,
-        headline: "Okay — improves reach, risks dilution.",
-        why_this:
-          "Ad tiers can capture price-sensitive segments and reduce churn elasticity.",
-        why_not_best:
-          "Price wars erode margins and shift focus away from content quality as the differentiator."
-      },
-      {
-        label: "Hold price; double down on quality and exclusives.",
-        tier: "best",
-        score: 2,
-        headline: "Best — defend differentiation against rivalry.",
-        why_this:
-          "Premium positioning aligns with HBO’s brand and counters rivalry on non-price dimensions.",
+          "A convertible loan provides foreign currency, keeps TAQA alive, and avoids giving up immediate ownership.",
         why_not_best: null
       },
       {
-        label: "Match competitors’ promotions aggressively.",
+        label: "Sell shares to new investors to inject cash quickly.",
+        tier: "okay",
+        score: 1,
+        headline: "Okay — solves liquidity, weakens control.",
+        why_this:
+          "It delivers immediate funding but dilutes Soumaya’s ownership and risks mission drift.",
+        why_not_best:
+          "You get cash, but you lose power. Investors may not prioritize sustainability or community impact."
+      },
+      {
+        label: "Operate entirely on cash flow and freeze all expansion.",
         tier: "poor",
         score: 0,
-        headline: "Poor — fuels a race to the bottom.",
+        headline: "Poor — stabilizes, but suffocates growth.",
         why_this:
-          "Aggressive promos train buyers to expect discounts; retention falls when promos end.",
+          "Running cash-only protects TAQA from bank risk but traps the company in survival mode.",
         why_not_best:
-          "A strong content moat resists imitation; pricing tactics are easily copied and unsustainable."
+          "This approach delays collapse but offers no path back to regional competitiveness."
       }
     ]
   },
+
   {
-    id: "narr-substitutes",
+    id: "sustainability-pressure",
     type: "narrative",
-    title: "Attention Shifts to Short-Form (2021)",
+    title: "Sustainability Under Pressure",
     text:
-      "Short-form platforms explode. HBO must decide whether to engage or ignore.",
+      "Electricity shortages force TAQA to rely on diesel ovens. Plastics remain unavoidable at industrial scale. Reforestation costs are rising. Lebanese consumers, struggling financially, deprioritize eco-friendly brands. Sustainability is TAQA’s identity, but it is also expensive to maintain under crisis.",
     image:
-      "https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&w=900"
+      "https://www.santanderopenacademy.com/en/blog/what-is-sustainability/_jcr_content/root/container/responsivegrid/image_416961853.coreimg.jpeg/1649173753985/what-is-sustainability-1.jpeg?auto=compress&w=900"
   },
+
   {
-    id: "dp-2021-substitutes",
+    id: "dp-sustainability",
     type: "decision",
-    title: "Decision Point: Responding to Substitutes (2021)",
+    title: "Decision Point: Mission vs. Survival",
     text:
-      "Choose how to respond to short-form substitutes siphoning attention.",
+      "TAQA’s sustainability practices cost money that the company barely has. Do you maintain full environmental standards or compromise temporarily?",
     image: null,
     options: [
       {
-        label: "Ignore; remain purely premium long-form.",
-        tier: "poor",
-        score: 0,
-        headline: "Poor — underestimates time-share erosion.",
-        why_this:
-          "Purity protects the brand but risks gradual engagement decline.",
-        why_not_best:
-          "Selective experiments earn learning options without diluting the flagship experience."
-      },
-      {
-        label: "Pilot short-form companions and creator partnerships.",
+        label: "Maintain full zero-waste and carbon-neutral practices.",
         tier: "best",
         score: 2,
-        headline: "Best — small bets for learning and reach.",
+        headline: "Best — protects TAQA’s core differentiation.",
         why_this:
-          "Companion shorts extend universes, seed discovery, and create on-ramps to long-form.",
+          "Sustainability is TAQA's identity and competitive moat. Cutting it would dilute brand equity and consumer trust.",
         why_not_best: null
       },
       {
-        label: "Build a separate short-form app asap.",
+        label: "Outsource sustainability initiatives to NGOs or partners.",
         tier: "okay",
         score: 1,
-        headline: "Okay — bold, but heavy and risky.",
+        headline: "Okay — maintains impact with lower effort.",
         why_this:
-          "Own distribution could capture new segments.",
+          "External partners can handle awareness events, recycling, and carbon offsets when TAQA lacks capacity.",
         why_not_best:
-          "Capital intensive with unclear synergy; pilots first preserve optionality."
+          "Delegation reduces control and may weaken the authenticity that made TAQA stand out."
+      },
+      {
+        label: "Suspend sustainability efforts until the crisis ends.",
+        tier: "poor",
+        score: 0,
+        headline: "Poor — damages the brand.",
+        why_this:
+          "Cutting sustainability temporarily saves money.",
+        why_not_best:
+          "This move contradicts TAQA’s mission and risks losing loyal consumers who trust its environmental promise."
       }
     ]
   },
+
   {
-    id: "narr-buyer-power",
+    id: "expansion-context",
     type: "narrative",
-    title: "Plateau & Buyer Power (2022)",
+    title: "Regional Expansion Disrupted",
     text:
-      "Subscribers plateau; switching costs are low. Retention drivers matter more than ever.",
+      "TAQA was poised to expand aggressively into the Gulf. A major deal in Saudi Arabia collapsed due to Lebanon’s crisis. However, the UAE shows promise with rising exports and a distributor willing to support TAQA’s long-term presence.",
     image:
-      "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&w=900"
+      "https://a.storyblok.com/f/165154/1280x720/f1dfdb487a/hero-image_geographic-expansion-how-to-expand-to-new-markets-1.jpg/m/?auto=compress&w=900"
   },
+
   {
-    id: "dp-2022-retention",
+    id: "dp-expansion",
     type: "decision",
-    title: "Decision Point: Retention & Personalization (2022)",
+    title: "Decision Point: Where to Focus Growth",
     text:
-      "Where do you place execution focus to counter high buyer power?",
+      "With Lebanon unstable, TAQA cannot expand everywhere. Where do you focus limited resources?",
     image: null,
     options: [
       {
-        label: "Rigorous feedback loops + personalization.",
+        label: "Double down on UAE expansion.",
         tier: "best",
         score: 2,
-        headline: "Best — raises perceived value per user.",
+        headline: "Best — stable demand, foreign currency, and growth momentum.",
         why_this:
-          "Better fit lowers churn, increases time-on-platform, and informs content bets.",
+          "UAE sales are rising and the market values sustainability. It offers stability that Lebanon cannot.",
         why_not_best: null
       },
       {
-        label: "Push geographic expansion immediately.",
+        label: "Consolidate only in Lebanon and wait for stability.",
         tier: "okay",
         score: 1,
-        headline: "Okay — adds volume, not stickiness.",
+        headline: "Okay — defensively safe, strategically weak.",
         why_this:
-          "New markets bring growth, but don’t fix core churn mechanics.",
+          "Remaining local reduces risk but limits revenue and exposes TAQA to Lebanon’s volatile environment.",
         why_not_best:
-          "Retention groundwork multiplies the payoff of later expansion."
+          "You protect yourself short-term but sacrifice long-term growth and foreign currency inflows."
       },
       {
-        label: "Increase promotional discounts to reduce churn.",
+        label: "Try to re-enter the Saudi market immediately.",
         tier: "poor",
         score: 0,
-        headline: "Poor — masks, not solves, retention issues.",
+        headline: "Poor — high risk with no guaranteed payoff.",
         why_this:
-          "Temporary dips in churn revert; margin damage compounds.",
+          "Replicating the KSA strategy in crisis conditions will likely fail again.",
         why_not_best:
-          "Personalization addresses root causes; promos train discount sensitivity."
+          "KSA already collapsed once due to Lebanon’s instability — the timing is still unfavorable."
       }
     ]
   },
+
   {
-    id: "narr-uncertainty",
+    id: "production-identity",
     type: "narrative",
-    title: "Planning Under Uncertainty (2023)",
+    title: "The Identity Dilemma",
     text:
-      "Technology and tastes shift quickly. The question is how to stay proactive.",
+      "TAQA was born in Lebanon. But Lebanon’s infrastructure is too unstable to support regional manufacturing reliably. Outsourcing to MENA partners may ensure growth, but risks diluting TAQA’s values. Staying fully Lebanese preserves identity but threatens survival.",
+    image:
+      "https://thisisbeirut.com.lb/images/bibli/1920/1280/2/sect-over-state-website.jpg?auto=compress&w=900"
+  },
+
+  {
+    id: "dp-production",
+    type: "decision",
+    title: "Decision Point: Production Model",
+    text:
+      "How should TAQA produce its products going forward?",
+    image: null,
+    options: [
+      {
+        label: "Outsource regional manufacturing while keeping R&D in Lebanon.",
+        tier: "best",
+        score: 2,
+        headline: "Best — preserves identity, ensures survival.",
+        why_this:
+          "This model keeps TAQA’s spirit in Lebanon while bypassing local operational instability.",
+        why_not_best: null
+      },
+      {
+        label: "Downsize and produce only from Lebanon.",
+        tier: "okay",
+        score: 1,
+        headline: "Okay — protects identity, limits growth.",
+        why_this:
+          "Staying local avoids brand dilution but sacrifices scale and exposes TAQA to constant disruptions.",
+        why_not_best:
+          "Dependence on Lebanon’s infrastructure will continue to choke production capacity."
+      },
+      {
+        label: "Sell the company and exit entirely.",
+        tier: "poor",
+        score: 0,
+        headline: "Poor — destroys mission and sacrifices employees.",
+        why_this:
+          "Selling transfers the headache to an investor.",
+        why_not_best:
+          "Brand purpose, sustainability mission, and employee livelihoods would likely be compromised."
+      }
+    ]
+  },
+
+  {
+    id: "future-context",
+    type: "narrative",
+    title: "Looking Beyond the Crisis",
+    text:
+      "TAQA stabilizes in the short term, but Soumaya needs a long-term identity for the brand. The company must define what it wants to be across the region.",
     image:
       "https://images.pexels.com/photos/3184666/pexels-photo-3184666.jpeg?auto=compress&w=900"
   },
+
   {
-    id: "dp-2023-uncertainty",
+    id: "dp-future",
     type: "decision",
-    title: "Decision Point: Proactive Planning (2023)",
+    title: "Decision Point: Long-Term Identity",
     text:
-      "Select your approach to navigate ongoing uncertainty.",
+      "What kind of company should TAQA become over the next decade?",
     image: null,
     options: [
       {
-        label: "React to market leaders; fast-follow.",
-        tier: "okay",
-        score: 1,
-        headline: "Okay — reduces downside, loses initiative.",
-        why_this:
-          "Tracking leaders avoids worst errors when info is scarce.",
-        why_not_best:
-          "Proactive playbooks create option value and speed in inflection moments."
-      },
-      {
-        label: "Build forecasting + what-if playbooks with partners.",
+        label: "A regional sustainable brand: Lebanon R&D, MENA manufacturing.",
         tier: "best",
         score: 2,
-        headline: "Best — institutionalizes adaptability.",
+        headline: "Best — scalable, resilient, mission-aligned.",
         why_this:
-          "Scenario planning, early signals, and partner optionality widen strategic degrees of freedom.",
+          "This model preserves TAQA’s Lebanese identity while enabling regional growth and operational stability.",
         why_not_best: null
       },
       {
-        label: "Freeze bets until uncertainty clears.",
+        label: "Rebuild full Lebanese manufacturing once the crisis ends.",
+        tier: "okay",
+        score: 1,
+        headline: "Okay — idealistic but risky.",
+        why_this:
+          "A pure Lebanese brand has emotional and cultural appeal.",
+        why_not_best:
+          "Lebanon’s long-term stability is uncertain, making this strategy fragile."
+      },
+      {
+        label: "Become a marketing-only brand and outsource everything.",
         tier: "poor",
         score: 0,
-        headline: "Poor — cedes ground and momentum.",
+        headline: "Poor — destroys product authenticity.",
         why_this:
-          "Waiting shrinks learning loops and increases catch-up costs.",
+          "Offloading all production reduces operational headaches.",
         why_not_best:
-          "Structured experimentation turns uncertainty into information."
+          "TAQA’s value lies in quality, sustainability, and authenticity — full outsourcing erodes all three."
       }
     ]
   }

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HBO Strategy Simulation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Top-right global controls -->
+  <div class="top-controls">
+    <button id="transcriptBtn" class="icon-btn" title="Transcript">🗒️</button>
+    <button id="restartBtn" class="icon-btn" title="Start Over">🔄</button>
+    <button id="themeToggleBtn" class="icon-btn" title="Toggle Theme">🌓</button>
+  </div>
+
+  <!-- Transcript Overlay -->
+  <div id="transcriptOverlay" class="transcript-overlay hidden" role="dialog" aria-modal="true" aria-label="Transcript">
+    <div class="transcript-window">
+      <div class="transcript-header">
+        <span>📜 Transcript</span>
+        <button id="closeTranscript" class="close-btn" aria-label="Close Transcript">✖</button>
+      </div>
+      <div id="transcriptContent" class="transcript-content"></div>
+    </div>
+  </div>
+
+  <!-- Main app window -->
+  <div class="app" id="app">
+    <header>
+      <div class="brand">HBO Strategy Simulation</div>
+      <div class="tag">interactive case study</div>
+    </header>
+    <div class="content" id="content"></div>
+  </div>
+
+  <script src="case_hbo.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
